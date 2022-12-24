@@ -3,3 +3,6 @@ class DynamicArray() {
 
 }
 
+fun DynamicArray.addCard(card: Card){
+    cards.add(card)
+}
