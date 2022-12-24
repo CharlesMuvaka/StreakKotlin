@@ -18,5 +18,12 @@ fun main() {
     array.shuffleCards()
 
     println(array.cards[0].cardRank)
+//    println(getDefaultCardValues("J"))
+    val deck: CardDeck = CardDeck()
+    println(deck.allCards.cards.size)
+
+    val player = PlayerHand("Charles", 5);
+    player.assignPlayingCards()
+    println(player.playingCards.cards.size)
 
 }
