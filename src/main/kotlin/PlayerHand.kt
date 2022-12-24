@@ -9,5 +9,6 @@ fun PlayerHand.assignPlayingCards(){
     for (i in 0 until this.cardsToPlayWith){
         val card:Card = deck.allCards.cards[i]
         this.playingCards.addCard(card)
+        deck.allCards.removeCard(card)
     }
 }
