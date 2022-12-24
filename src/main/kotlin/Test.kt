@@ -24,6 +24,8 @@ fun main() {
 
     val player = PlayerHand("Charles", 5);
     player.assignPlayingCards()
-    println(player.playingCards.cards.size)
+//    player.playingCards.shuffleCards()
+    println(player.displayCards())
+
 
 }
