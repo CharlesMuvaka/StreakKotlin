@@ -8,7 +8,12 @@ class CardDeck {
             CardSuit("clubs", "black"),
         )
 
-
+        for (i in cardRanks.indices){
+            for (suit in cardSuits){
+                val card:Card = Card(cardRanks[i], getDefaultCardValues(cardRanks[i]), suit)
+                allCards.addCard(card)
+            }
+        }
     }
 
 }
