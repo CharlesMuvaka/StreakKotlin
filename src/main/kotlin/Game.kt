@@ -25,7 +25,14 @@ class Game {
         println(name)
         val playerName = reader.next()
         println(cards)
-        val cardsToPlayWith = reader.nextInt()
+        var cardsToPlayWith = reader.nextInt()
+
+        //checking whether cards are of the required number
+        if (cardsToPlayWith < 5 || cardsToPlayWith > 10){
+            println("cards should be more than 5 and less than 10")
+            println(cards)
+            cardsToPlayWith = reader.nextInt()
+        }
         val player = PlayerHand(playerName, cardsToPlayWith)
         player.assignPlayingCards()
         player.sortCards()
