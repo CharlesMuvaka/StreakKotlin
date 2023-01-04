@@ -14,11 +14,13 @@ class Game {
 
         if (gameToBePlayed == 1){
             singlePlayerGame()
+        }else{
+            twoPlayerGame()
         }
     }
 
     private fun singlePlayerGame(){
-        val name = "Enter yor name"
+        val name = "Enter your name"
         val cards = "Enter number of playing cards"
         println(name)
         val playerName = reader.next()
@@ -29,5 +31,34 @@ class Game {
         player.sortCards()
         println(player.displayCards())
         println(player.getScore())
+    }
+
+    private fun twoPlayerGame(){
+        val name = "Enter player one name"
+        val cards = "Enter number of playing cards"
+        val name2 = "Enter player two name"
+
+        println(name)
+
+        val playerOneName = reader.next()
+        println(cards)
+        val cardsToPlayWith = reader.nextInt()
+        println(name2)
+        val playerTwoName = reader.next()
+
+        //creating an instance of the first player
+        val playerOne = PlayerHand(playerOneName, cardsToPlayWith)
+        playerOne.assignPlayingCards()
+        playerOne.sortCards()
+        println(playerOne.displayCards())
+        println(playerOne.getScore())
+
+        //creating an instance of the second player
+        val playerTwo = PlayerHand(playerTwoName, cardsToPlayWith)
+        playerTwo.assignPlayingCards()
+        playerTwo.sortCards()
+        println(playerTwo.displayCards())
+        println(playerTwo.getScore())
+
     }
 }
