@@ -30,10 +30,10 @@ fun main() {
     val player = PlayerHand("Charles", 5);
     player.assignPlayingCards()
 //    player.playingCards.shuffleCards()
-    println(player.displayCards())
+//    println(player.displayCards())
     println(player.sortCards())
     println(player.displayCards())
-
+    println(player.getScore())
 
 
 }
