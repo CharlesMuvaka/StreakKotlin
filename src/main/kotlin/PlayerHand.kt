@@ -3,7 +3,7 @@ class PlayerHand(private val name:String, private val capacity:Int) {
     val playerName = name
     val cardsToPlayWith = capacity
 
-    //method to sort out the players card in an ascending order
+    //method to sort out the players card in ascending order
     fun sortCards(){
         val values = IntArray(this.playingCards.cards.size){0}
         val sortedCards = DynamicArray()
@@ -28,6 +28,29 @@ class PlayerHand(private val name:String, private val capacity:Int) {
         }
         playingCards = sortedCards
 
+    }
+
+    fun getScore():Int{
+        var score = 0
+        var count = 1
+        for (i in 0..cardsToPlayWith){
+           if(count != cardsToPlayWith){
+               if ((playingCards.cards[i].cardValue + 1)== playingCards.cards[count].cardValue){
+                   score++
+                   if (playingCards.cards[i].cardSuit._color == playingCards.cards[count].cardSuit._color){
+                       score++
+                   }
+                   if (playingCards.cards[i].cardSuit._name == playingCards.cards[count].cardSuit._name){
+                       score += 2
+                   }
+               }
+
+           }else{
+               break
+           }
+            count++
+        }
+        return score
     }
 }
 
