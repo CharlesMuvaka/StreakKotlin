@@ -35,14 +35,20 @@ class Game {
 
     private fun twoPlayerGame(){
         val name = "Enter player one name"
-        val cards = "Enter number of playing cards"
+        val cards = "Enter number of playing cards(5-10)"
         val name2 = "Enter player two name"
 
         println(name)
 
         val playerOneName = reader.next()
         println(cards)
-        val cardsToPlayWith = reader.nextInt()
+        var cardsToPlayWith = reader.nextInt()
+
+        if (cardsToPlayWith < 5 || cardsToPlayWith > 10){
+            println("cards should be more than 5 and less than 10")
+            println(cards)
+            cardsToPlayWith = reader.nextInt()
+        }
         println(name2)
         val playerTwoName = reader.next()
 
@@ -60,5 +66,9 @@ class Game {
         println(playerTwo.displayCards())
         println(playerTwo.getScore())
 
+    }
+
+    private fun dropCard(){
+        val name = "Enter "
     }
 }
