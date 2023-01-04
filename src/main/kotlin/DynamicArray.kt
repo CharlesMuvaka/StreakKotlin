@@ -26,3 +26,17 @@ fun DynamicArray.shuffleCards(){
         this.cards[randomNumber] = newCard
     }
 }
+
+fun DynamicArray.getCardByValue(cardValue: Int): Card{
+     var card = Card("", 0, CardSuit("", ""))
+    for (i in 0 until this.cards.size){
+        if (cardValue == this.cards[i].cardValue){
+            card.cardSuit._color = this.cards[i].cardSuit._color
+            card.cardSuit._name = this.cards[i].cardSuit._name
+            card.cardValue = this.cards[i].cardValue
+            card.cardRank = this.cards[i].cardRank
+        }
+    }
+    return card
+}
+
