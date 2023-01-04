@@ -1,8 +1,8 @@
 //create a blueprint to initialise a card instance
 class Card(rank:String, value:Int, suit: CardSuit) {
-    val cardRank: String = rank
-    val cardValue: Int = value
-    val cardSuit: CardSuit = suit
+    var cardRank: String = rank
+    var cardValue: Int = value
+    var cardSuit: CardSuit = suit
 }
 
 fun Card.checkCardMatching(card: Card): Boolean{
@@ -15,4 +15,8 @@ fun Card.checkCardMatching(card: Card): Boolean{
         return true
     }
     return false
+}
+
+fun Card.getCardStringValue(): String{
+    return "${this.cardRank} of ${this.cardSuit._name} color ${this.cardSuit._color}"
 }
