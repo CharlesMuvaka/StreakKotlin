@@ -66,11 +66,12 @@ fun PlayerHand.assignPlayingCards(){
 }
 
 fun PlayerHand.displayCards(): String{
+    val letters = arrayOf('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I')
     val newLine = "\n"
     var playerCards: String = "${this.playerName} has: $newLine"
 
-    for (card in this.playingCards.cards){
-        playerCards += "Card: ${card.cardRank} of ${card.cardSuit._name} ${card.cardSuit._color} $newLine"
+    for (i in 0 until playingCards.cards.size){
+        playerCards += "${letters[i]} -> Card: ${playingCards.cards[i].cardRank} of ${playingCards.cards[i].cardSuit._name} ${playingCards.cards[i].cardSuit._color} $newLine"
     }
     return playerCards
 }
